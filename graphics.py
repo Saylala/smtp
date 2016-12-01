@@ -24,18 +24,18 @@ class Graphics(QWidget):
         grid = QGridLayout()
         grid.setSpacing(10)
 
-        frames = [('Server', QLineEdit('smtp.mail.ru')),
-                  ('Port', QLineEdit('465')),
-                  ('Login', QLineEdit('saylalaover10000@mail.ru')),
-                  ('Password', QLineEdit('bqbwbxbz')),
-                  ('Receiver', QLineEdit('saylalaover10000@mail.ru'))]
+        frames = [('Server', QLineEdit()),
+                  ('Port', QLineEdit()),
+                  ('Login', QLineEdit()),
+                  ('Password', QLineEdit()),
+                  ('Receiver', QLineEdit())]
 
         self.frames = collections.OrderedDict(frames)
         for i, name in enumerate(self.frames.keys()):
             grid.addWidget(QLabel(name), i, 0)
             grid.addWidget(self.frames[name], i, 1)
 
-        self.mail_frame = QTextEdit('test')
+        self.mail_frame = QTextEdit()
         self.send_button = QPushButton('Send', self)
         self.send_button.clicked.connect(self.send)
         grid.addWidget(QLabel('Mail:'), 6, 0)
